@@ -104,11 +104,9 @@ class DetailsViewController: UIViewController {
         self.foundedOn.text = company?.foundedOn
         self.employees.text = "\(company!.numberOfEmployees!)"
         self.website.text = company?.webLabel
-        var formattedValuation = NSString(format: "%.2f", company!.companyValue!.Valuation)
-        self.valuationLabel.text = "$\(formattedValuation)M"
+        printFormattedValuation()
         
-        var formattedStock = NSString(format: "%.2f", company!.companyStock!.StockPrice)
-        self.stockLabel.text = "$\(formattedStock)"
+        printFormattedStockPrice()
         let growth = company?.companyGrowth?.GrowthRate!
         self.growthLabel.text = "\(growth!)%"
         let culture = company?.companyCulture?.CulturePercent
@@ -117,6 +115,16 @@ class DetailsViewController: UIViewController {
         self.stockCount.text = "\(company!.companyStock!.Votes) votes"
         self.growthCount.text = "\(company!.companyGrowth!.Votes!) votes"
         self.workCount.text = "\(company!.companyCulture!.Votes) votes"
+    }
+    
+    func printFormattedValuation(){
+        var formattedValuation = NSString(format: "%.2f", company!.companyValue!.Valuation)
+        self.valuationLabel.text = "$\(formattedValuation)M"
+    }
+    
+    func printFormattedStockPrice(){
+        var formattedStock = NSString(format: "%.2f", company!.companyStock!.StockPrice)
+        self.stockLabel.text = "$\(formattedStock)"
     }
     
     func setRoundCorner(view: UIView, radius: CGFloat){
@@ -194,6 +202,8 @@ class DetailsViewController: UIViewController {
     }
     
     @IBAction func onValuationLike(sender: UIButton) {
+        company!.companyValue!.Votes += 1
+        self.valuationCount.text = "\(company!.companyValue!.Votes) votes"
     }
     
     @IBAction func onValuationUnlike(sender: UIButton) {
@@ -201,6 +211,8 @@ class DetailsViewController: UIViewController {
     
     
     @IBAction func onStockLike(sender: UIButton) {
+        company!.companyStock!.Votes += 1
+         self.stockCount.text = "\(company!.companyStock!.Votes) votes"
     }
     
     
@@ -209,11 +221,23 @@ class DetailsViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var nextVC = segue.destinationViewController as ValueStockViewController
+        nextVC.delegate = self
         nextVC.company = company
         if(segue.identifier == "valuationSegue"){
             nextVC.fromView = "Valuation"
         }else if(segue.identifier == "stockSegue"){
             nextVC.fromView = "Stock Price"
+        }
+    }
+}
+
+extension DetailsViewController: ValueStockViewControllerDelegate{
+    func didUpdate(valueStockViewController: ValueStockViewController, updated: Bool) {
+        if(updated){
+            self.printFormattedStockPrice()
+            self.printFormattedValuation()
+            self.valuationCount.text = "\(company!.companyValue!.Votes) votes"
+            self.stockCount.text = "\(company!.companyStock!.Votes) votes"
         }
     }
 }

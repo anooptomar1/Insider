@@ -688,7 +688,7 @@
                                                 <color key="textColor" red="0.19215686269999999" green="0.23137254900000001" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ZvZ-ds-WSf">
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" maximumValue="1000" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZvZ-ds-WSf">
                                                 <rect key="frame" x="50" y="106" width="94" height="29"/>
                                                 <connections>
                                                     <action selector="onStepper:" destination="qvc-Ni-mO0" eventType="valueChanged" id="Pyc-m8-J5z"/>
