@@ -1,0 +1,69 @@
+{
+ "metadata": {
+  "version": 2,
+  "www_path_prefix": "https://www.crunchbase.com/",
+  "api_path_prefix": "https://api.crunchbase.com/v/2/",
+  "image_path_prefix": "https://res.cloudinary.com/crunchbase-production/"
+ },
+ "data": {
+  "uuid": "aea9f9da820ac8f2cbeaee763eb598ee",
+  "type": "Organization",
+  "properties": {
+   "role_company": true,
+   "founded_on_day": 11,
+   "founded_on_month": 4,
+   "founded_on_year": 2013,
+   "founded_on": "2013-04-11",
+   "founded_on_trust_code": 7,
+   "permalink": "nest-world",
+   "primary_role": "company",
+   "closed_on_trust_code": 0,
+   "homepage_url": "http://www.nestpia.com",
+   "name": "The NEST World",
+   "is_closed": false,
+   "short_description": "Our goal is open up and lead a new market of “codeless” application development using groundbreaking development methodology for 15 years.",
+   "closed_on_day": null,
+   "closed_on_month": null,
+   "closed_on_year": null,
+   "closed_on": null,
+   "created_at": 1426033871,
+   "updated_at": 1426033954,
+   "total_funding_usd": 0,
+   "number_of_investments": 0
+  },
+  "relationships": {
+   "primary_image": {
+    "paging": {
+     "total_items": 1,
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/nest-world/primary_image",
+     "sort_order": "created_at DESC"
+    },
+    "items": [
+     {
+      "type": "ImageAsset",
+      "title": null,
+      "path": "image/upload/v1426033671/nfgmy2o2ldpdvgecokmf.png",
+      "created_at": 1426033871,
+      "updated_at": 1426033871
+     }
+    ]
+   },
+   "websites": {
+    "paging": {
+     "total_items": 1,
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/nest-world/websites",
+     "sort_order": "created_at DESC"
+    },
+    "items": [
+     {
+      "url": "http://www.nestpia.com",
+      "type": "WebPresence",
+      "title": "homepage",
+      "created_at": 1426033871,
+      "updated_at": 1426033871
+     }
+    ]
+   }
+  }
+ }
+}
