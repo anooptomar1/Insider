@@ -19,6 +19,7 @@
 		897C9FE31ABFB6CD0078CF49 /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897C9FE21ABFB6CD0078CF49 /* CircularLoaderView.swift */; };
 		897C9FE51ABFB6FF0078CF49 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897C9FE41ABFB6FF0078CF49 /* CustomImageView.swift */; };
 		897CA0151AC135FF0078CF49 /* ValueStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CA0141AC135FF0078CF49 /* ValueStockViewController.swift */; };
+		897CA0171AC1D7CA0078CF49 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897CA0161AC1D7CA0078CF49 /* FacebookSDK.framework */; };
 		89E068411AAFCE90008F79BE /* SampleSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E068401AAFCE90008F79BE /* SampleSB.storyboard */; };
 		89E068431AAFCF12008F79BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E068421AAFCF12008F79BE /* MainViewController.swift */; };
 		89E068471AB0009F008F79BE /* CompanyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E068461AB0009F008F79BE /* CompanyData.swift */; };
@@ -65,6 +66,7 @@
 		897C9FE21ABFB6CD0078CF49 /* CircularLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularLoaderView.swift; sourceTree = "<group>"; };
 		897C9FE41ABFB6FF0078CF49 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		897CA0141AC135FF0078CF49 /* ValueStockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueStockViewController.swift; sourceTree = "<group>"; };
+		897CA0161AC1D7CA0078CF49 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		89E068401AAFCE90008F79BE /* SampleSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SampleSB.storyboard; sourceTree = "<group>"; };
 		89E068421AAFCF12008F79BE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		89E068461AB0009F008F79BE /* CompanyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyData.swift; sourceTree = "<group>"; };
@@ -79,8 +81,8 @@
 		DF4FE07D1AB6435D00B730D1 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		DFA61DB51AAEC15300EC202F /* CrunchMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrunchMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA61DB91AAEC15300EC202F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFA61DBA1AAEC15300EC202F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DFA61DC11AAEC15300EC202F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DFA61DBA1AAEC15300EC202F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = CrunchMobile/AppDelegate.swift; sourceTree = "<group>"; };
+		DFA61DC11AAEC15300EC202F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CrunchMobile/Images.xcassets; sourceTree = "<group>"; };
 		DFA61DC41AAEC15300EC202F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DFA61DCA1AAEC15300EC202F /* CrunchMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrunchMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA61DCF1AAEC15300EC202F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49EC41FDA43143C1C92135F6 /* libPods.a in Frameworks */,
+				897CA0171AC1D7CA0078CF49 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +144,9 @@
 		89E0683B1AAFCE52008F79BE /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				DFA61DC31AAEC15300EC202F /* LaunchScreen.xib */,
+				DFA61DC11AAEC15300EC202F /* Images.xcassets */,
+				DFA61DBA1AAEC15300EC202F /* AppDelegate.swift */,
 				89E0683F1AAFCE77008F79BE /* ViewController */,
 				89E0683E1AAFCE71008F79BE /* Data */,
 				89E0683D1AAFCE66008F79BE /* Model */,
@@ -200,6 +206,7 @@
 		DFA61DAC1AAEC15300EC202F = {
 			isa = PBXGroup;
 			children = (
+				897CA0161AC1D7CA0078CF49 /* FacebookSDK.framework */,
 				89E0683B1AAFCE52008F79BE /* SampleApp */,
 				DFA61DB71AAEC15300EC202F /* CrunchMobile */,
 				DFA61DCD1AAEC15300EC202F /* CrunchMobileTests */,
@@ -226,9 +233,6 @@
 				DF4FE0701AAED81600B730D1 /* Model */,
 				DFA61DDF1AAEC37200EC202F /* View */,
 				DFA61DDA1AAEC1A000EC202F /* ViewController */,
-				DFA61DBA1AAEC15300EC202F /* AppDelegate.swift */,
-				DFA61DC11AAEC15300EC202F /* Images.xcassets */,
-				DFA61DC31AAEC15300EC202F /* LaunchScreen.xib */,
 				DFA61DB81AAEC15300EC202F /* Supporting Files */,
 			);
 			path = CrunchMobile;
@@ -475,6 +479,7 @@
 				DFA61DC41AAEC15300EC202F /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = CrunchMobile;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -563,6 +568,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CrunchMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -578,6 +587,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CrunchMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

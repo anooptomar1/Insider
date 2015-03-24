@@ -8,3 +8,4 @@
 #import <UIScrollView+SVInfiniteScrolling.h>
 #import "PNChart.h"
 #import "SVProgressHUD.h"
+#import <FacebookSDK/FacebookSDK.h>
