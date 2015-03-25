@@ -28,8 +28,6 @@ class MainViewController: UIViewController{
         self.tableView.delegate = self
         self.searchBar.delegate = self
         
-        println(FBSession.activeSession().permissions)
-        
         reloadDataFromNetwork(pageNumber, cnt: count)
         //self.tableView.rowHeight = UITableViewAutomaticDimension;
         //self.tableView.backgroundColor = UIColor.whiteColor()
@@ -98,7 +96,7 @@ class MainViewController: UIViewController{
             destVC.company = companyData[indexPath!.row]
         }
         
-        println(companyData[indexPath!.row].companyCulture!.CulturePercent)
+       // println(companyData[indexPath!.row].companyCulture!.CulturePercent)
     }
 }
 
@@ -141,7 +139,7 @@ extension MainViewController: UITableViewDelegate{
 extension MainViewController: UISearchBarDelegate{
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         filteredCompany = searchText.isEmpty ? [CompanyData]() : companyData.filter({ (comp: CompanyData) -> Bool in
-            println(comp.companyName!)
+          //  println(comp.companyName!)
             return comp.companyName?.rangeOfString(searchText) != nil
         })
         
