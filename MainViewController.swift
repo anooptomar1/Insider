@@ -10,6 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController{
     
+    @IBOutlet weak var searchBar: UISearchBar!
     let progressIndicatorView = CircularLoaderView(frame: CGRectZero)
     
     var tableViewOffset = CGPointZero
@@ -19,10 +20,13 @@ class MainViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     var companyData = [CompanyData]()
     
+    var filteredCompany = [CompanyData]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.searchBar.delegate = self
         
         println(FBSession.activeSession().permissions)
         
@@ -88,7 +92,12 @@ class MainViewController: UIViewController{
         self.tableViewOffset = self.tableView.contentOffset
         var destVC = segue.destinationViewController as DetailsViewController
         var indexPath = self.tableView.indexPathForSelectedRow()
-        destVC.company = companyData[indexPath!.row]
+        if(filteredCompany.count > 0){
+            destVC.company = filteredCompany[indexPath!.row]
+        }else{
+            destVC.company = companyData[indexPath!.row]
+        }
+        
         println(companyData[indexPath!.row].companyCulture!.CulturePercent)
     }
 }
@@ -97,11 +106,19 @@ extension MainViewController: UITableViewDataSource{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as MainTableViewCell
     
-        cell.setupCell(companyData[indexPath.row])
+        if(filteredCompany.count > 0){
+            cell.setupCell(filteredCompany[indexPath.row])
+        }else{
+            cell.setupCell(companyData[indexPath.row])
+        }
         return cell
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return companyData.count
+        if(filteredCompany.count > 0){
+            return filteredCompany.count
+        }else{
+            return companyData.count
+        }
     }
     
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -112,9 +129,23 @@ extension MainViewController: UITableViewDataSource{
         return UITableViewAutomaticDimension
     }
    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        searchBar.resignFirstResponder();
+    }
 }
 
 extension MainViewController: UITableViewDelegate{
 
+}
+
+extension MainViewController: UISearchBarDelegate{
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredCompany = searchText.isEmpty ? [CompanyData]() : companyData.filter({ (comp: CompanyData) -> Bool in
+            println(comp.companyName!)
+            return comp.companyName?.rangeOfString(searchText) != nil
+        })
+        
+        self.tableView.reloadData()
+    }
 }
 
