@@ -43,7 +43,10 @@ class CircularLoaderView: UIView {
     }
     
     func reveal(){
-        backgroundColor = UIColor.clearColor()
+        var backImage = UIImageView(frame: CGRectMake(0, 0, self.frame.width, self.frame.height))
+        backImage.image = UIImage(named: "Splash_image")
+        self.addSubview(backImage)
+        //backgroundColor = UIColor.clearColor()
         progress = 1
         
         circlePathLayer.removeAnimationForKey("strokeEnd")

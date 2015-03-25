@@ -9,22 +9,11 @@
 import UIKit
 
 class LoginViewController: UIViewController, FBLoginViewDelegate {
-    @IBOutlet weak var closeView: UIView!
+    
     @IBOutlet weak var fbLoginView: FBLoginView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        closeView.hidden = true
     }
 
-    
-    @IBAction func onCloseButton(sender: UIButton) {
-        if(FBSession.activeSession().state == FBSessionState.Closed){
-            closeView.hidden = true
-            UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
-        }else{
-            dismissViewControllerAnimated(true, completion: nil)
-        }
-    }
-    
 }
