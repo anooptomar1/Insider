@@ -12,7 +12,7 @@ class DetailsViewController: UIViewController {
 
     @IBOutlet weak var favStar: UIButton!
     @IBOutlet weak var smallLogo: UIImageView!
-    @IBOutlet weak var dialogView: UIView!
+    @IBOutlet weak var dialogView: SpringView!
     @IBOutlet weak var stockView: UIView!
     @IBOutlet weak var valueView: UIView!
     @IBOutlet weak var workView: UIView!
@@ -65,8 +65,15 @@ class DetailsViewController: UIViewController {
             company!.favCompany = false
         }
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        animateView(dialogView)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        dialogView.hidden = true
         
         setRoundCorner(dialogView, radius: 15)
         setRoundCorner(stockView, radius: 10)
@@ -136,6 +143,47 @@ class DetailsViewController: UIViewController {
         self.favStar.hidden = favHidden
     }
     
+    
+    func animateView(view: SpringView){
+        view.hidden = false
+        view.force = 1.0
+        view.duration = 0.5
+        view.delay = 0
+        
+        view.damping = 1.0
+        view.velocity = 1.0
+        view.scaleX = 1.0
+        view.scaleY = 1.0
+        view.x = 0
+        view.y = 0
+        view.rotate = 50
+        
+        view.animation = "squeezeDown"
+        view.curve = "spring"
+        view.animate()
+    }
+    
+    func animateHide(view: SpringView){
+        view.hidden = false
+        view.force = 1.0
+        view.duration = 1.0
+        view.delay = 0
+        
+        view.damping = 1.0
+        view.velocity = 1.0
+        view.scaleX = 1.0
+        view.scaleY = 1.0
+        view.x = 0
+        view.y = 0
+        view.rotate = 50
+        
+        view.animation = "fall"
+        view.curve = "spring"
+        view.animateNext { () -> () in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+    
     func printFormattedValuation(){
         var formattedValuation = NSString(format: "%.2f", company!.companyValue!.Valuation)
         self.valuationLabel.text = "$\(formattedValuation)M"
@@ -157,7 +205,8 @@ class DetailsViewController: UIViewController {
     }
     
     @IBAction func dismissDialog(sender: UIButton) {
-        dismissViewControllerAnimated(true, completion: nil)
+       // animateHide(dialogView)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     

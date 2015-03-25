@@ -14,8 +14,8 @@ protocol ValueStockViewControllerDelegate: class{
 
 class ValueStockViewController: UIViewController {
 
-    @IBOutlet weak var valueationView: UIView!
-    @IBOutlet weak var trendingView: UIView!
+    @IBOutlet weak var valueationView: SpringView!
+    @IBOutlet weak var trendingView: SpringView!
     @IBOutlet weak var companyName: UILabel!
     
     @IBOutlet weak var smallLogo: UIImageView!
@@ -31,6 +31,7 @@ class ValueStockViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        valueationView.hidden = true
         setRoundCorner(valueationView, radius: 15)
         setRoundCorner(trendingView, radius: 10)
         setRoundCorner(smallLogo, radius: 4)
@@ -48,6 +49,30 @@ class ValueStockViewController: UIViewController {
         }else{
             printFormattedStockPrice()
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        animateView(valueationView)
+    }
+    
+    func animateView(view: SpringView){
+        view.hidden = false
+        view.force = 1.0
+        view.duration = 0.5
+        view.delay = 0
+        
+        view.damping = 1.0
+        view.velocity = 1.0
+        view.scaleX = 1.0
+        view.scaleY = 1.0
+        view.x = 0
+        view.y = 0
+        view.rotate = 100
+        
+        view.animation = "zoomIn"
+        view.curve = "spring"
+        view.animate()
     }
     
     func printFormattedValuation(){

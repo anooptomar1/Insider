@@ -480,7 +480,7 @@
                                     <action selector="dismissDialog:" destination="R0R-Ea-YZ5" eventType="touchUpInside" id="lzM-y4-nNz"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Prc-br-i8F">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Prc-br-i8F" customClass="SpringView" customModule="CrunchMobile" customModuleProvider="target">
                                 <rect key="frame" x="10" y="100" width="300" height="368"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ev-JF-uyz">
@@ -927,7 +927,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9X6-ig-blE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMb-iu-Qmo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClose:" destination="qvc-Ni-mO0" eventType="touchUpInside" id="73E-el-RUs"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9X6-ig-blE" customClass="SpringView" customModule="CrunchMobile" customModuleProvider="target">
                                 <rect key="frame" x="55" y="185" width="211" height="198"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z7T-29-zdf">
@@ -983,9 +993,18 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.39693813131313127" green="0.39693813131313127" blue="0.39693813131313127" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yfo-VD-CBY" firstAttribute="top" secondItem="xMb-iu-Qmo" secondAttribute="bottom" id="E3W-ul-SY8"/>
+                            <constraint firstItem="xMb-iu-Qmo" firstAttribute="leading" secondItem="dc5-Oh-sua" secondAttribute="leading" id="Mg4-yO-57j"/>
+                            <constraint firstAttribute="trailing" secondItem="xMb-iu-Qmo" secondAttribute="trailing" id="Nqj-KP-2dh"/>
+                            <constraint firstItem="xMb-iu-Qmo" firstAttribute="top" secondItem="dc5-Oh-sua" secondAttribute="top" id="VFA-uI-bKv"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
