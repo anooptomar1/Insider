@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Fav View Controller-->
+        <!--My Favorite-->
         <scene sceneID="ELy-nb-8v1">
             <objects>
                 <viewController id="eaB-Ev-Po7" customClass="FavViewController" customModule="CrunchMobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -185,6 +185,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="My Favorite" id="Mom-Ua-PPR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="esg-Zx-dhH" id="sCE-ez-ppN"/>
