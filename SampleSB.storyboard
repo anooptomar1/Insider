@@ -387,7 +387,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Crunch Insignt" id="RxR-Vp-uRQ">
                         <barButtonItem key="leftBarButtonItem" image="menu33" style="plain" id="jow-bP-eMF">
-                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="onMenuButton:" destination="crr-Ry-wp8" id="QcA-vL-jxf"/>
                             </connections>
@@ -1031,7 +1031,7 @@
         <image name="tup" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hfa-ML-clv"/>
+        <segue reference="Zky-Cq-tPJ"/>
         <segue reference="UnX-1G-pCN"/>
     </inferredMetricsTieBreakers>
 </document>
