@@ -21,6 +21,7 @@
 		897C9FE51ABFB6FF0078CF49 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897C9FE41ABFB6FF0078CF49 /* CustomImageView.swift */; };
 		897CA0151AC135FF0078CF49 /* ValueStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CA0141AC135FF0078CF49 /* ValueStockViewController.swift */; };
 		897CA0171AC1D7CA0078CF49 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897CA0161AC1D7CA0078CF49 /* FacebookSDK.framework */; };
+		89D187A01AC275EB00FED4A4 /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1879F1AC275EB00FED4A4 /* FavViewController.swift */; };
 		89E068411AAFCE90008F79BE /* SampleSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E068401AAFCE90008F79BE /* SampleSB.storyboard */; };
 		89E068431AAFCF12008F79BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E068421AAFCF12008F79BE /* MainViewController.swift */; };
 		89E068471AB0009F008F79BE /* CompanyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E068461AB0009F008F79BE /* CompanyData.swift */; };
@@ -69,6 +70,7 @@
 		897C9FE41ABFB6FF0078CF49 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		897CA0141AC135FF0078CF49 /* ValueStockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueStockViewController.swift; sourceTree = "<group>"; };
 		897CA0161AC1D7CA0078CF49 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		89D1879F1AC275EB00FED4A4 /* FavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavViewController.swift; sourceTree = "<group>"; };
 		89E068401AAFCE90008F79BE /* SampleSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SampleSB.storyboard; sourceTree = "<group>"; };
 		89E068421AAFCF12008F79BE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		89E068461AB0009F008F79BE /* CompanyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyData.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				8971360F1ABC7AE500EFB1A0 /* DetailsViewController.swift */,
 				897CA0141AC135FF0078CF49 /* ValueStockViewController.swift */,
 				8924FBB51AC21F3700922AFA /* LoginViewController.swift */,
+				89D1879F1AC275EB00FED4A4 /* FavViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				DFA61DBB1AAEC15300EC202F /* AppDelegate.swift in Sources */,
 				DFA61DE81AAECCCB00EC202F /* CompanyTableViewController.swift in Sources */,
 				8924FBB61AC21F3700922AFA /* LoginViewController.swift in Sources */,
+				89D187A01AC275EB00FED4A4 /* FavViewController.swift in Sources */,
 				DF4FE0791AB633A200B730D1 /* CompanyGossipViewController.swift in Sources */,
 				89E068431AAFCF12008F79BE /* MainViewController.swift in Sources */,
 				89480D831ABE9345009F6882 /* CompanyStock.swift in Sources */,

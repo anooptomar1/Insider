@@ -27,6 +27,8 @@ class CompanyData
     var companyGrowth: CompanyGrowth?
     var companyStock: CompanyStock?
     
+    var favCompany: Bool?
+    
     
     init(profileImage: String, companyLoc: String, ipoInfo: String, founders: String, numberEmployee: String, shortDesc: String,  foundedOn: String, webLabel: String, compName: String, fullD: String, stockS: String,
         companyValuation: CompanyValuation, companyCulture: CompanyCulture, companyGrowth: CompanyGrowth, companyStock: CompanyStock
@@ -46,6 +48,7 @@ class CompanyData
         self.companyCulture = companyCulture
         self.companyGrowth = companyGrowth
         self.companyStock = companyStock
+        self.favCompany = false
     }
     
     class func ConvertToCompanyData(compArray: [NSDictionary]) -> [CompanyData]{

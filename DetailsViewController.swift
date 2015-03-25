@@ -10,6 +10,7 @@ import UIKit
 
 class DetailsViewController: UIViewController {
 
+    @IBOutlet weak var favStar: UIButton!
     @IBOutlet weak var smallLogo: UIImageView!
     @IBOutlet weak var dialogView: UIView!
     @IBOutlet weak var stockView: UIView!
@@ -33,6 +34,8 @@ class DetailsViewController: UIViewController {
     var circleChart: PNCircleChart?
     var workCircleChart: PNCircleChart?
     
+    var favHidden = false
+    
     // valuation
     @IBOutlet weak var valuationLabel: UILabel!
     
@@ -48,6 +51,20 @@ class DetailsViewController: UIViewController {
     var company: CompanyData?
     var textColor: UIColor?
     
+    @IBAction func onStar(sender: UIButton) {
+        setupFav()
+    }
+    
+    func setupFav(){
+        if(!company!.favCompany!){
+            favStar.tintColor = UIColor.orangeColor()
+            company!.favCompany = true
+        }
+        else{
+            favStar.tintColor = UIColor.blueColor()
+            company!.favCompany = false
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -115,6 +132,8 @@ class DetailsViewController: UIViewController {
         self.stockCount.text = "\(company!.companyStock!.Votes) votes"
         self.growthCount.text = "\(company!.companyGrowth!.Votes!) votes"
         self.workCount.text = "\(company!.companyCulture!.Votes) votes"
+        self.favStar.tintColor = company!.favCompany! ? UIColor.orangeColor() : UIColor.blueColor()
+        self.favStar.hidden = favHidden
     }
     
     func printFormattedValuation(){

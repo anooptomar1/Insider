@@ -10,6 +10,7 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
 
+   
     @IBOutlet weak var companyLogo: UIImageView!
     @IBOutlet weak var companyName: UILabel!
     
@@ -36,6 +37,7 @@ class MainTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
+    
     
     func setupCell(company: CompanyData){
         self.companyLogo.setImageWithURL(NSURL(string: company.profileImage!))

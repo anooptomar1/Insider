@@ -87,14 +87,26 @@ class MainViewController: UIViewController{
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        self.tableViewOffset = self.tableView.contentOffset
-        var destVC = segue.destinationViewController as DetailsViewController
-        var indexPath = self.tableView.indexPathForSelectedRow()
-        if(filteredCompany.count > 0){
-            destVC.company = filteredCompany[indexPath!.row]
+        
+        if segue.identifier == "favSegue"{
+            
+            var destVC = segue.destinationViewController as FavViewController
+            destVC.companies = companyData.filter({ (company: CompanyData) -> Bool in
+                return company.favCompany!
+            })
+            
         }else{
-            destVC.company = companyData[indexPath!.row]
+            self.tableViewOffset = self.tableView.contentOffset
+            var destVC = segue.destinationViewController as DetailsViewController
+            var indexPath = self.tableView.indexPathForSelectedRow()
+            if(filteredCompany.count > 0){
+                destVC.company = filteredCompany[indexPath!.row]
+            }else{
+                destVC.company = companyData[indexPath!.row]
+            }
+
         }
+        
         
        // println(companyData[indexPath!.row].companyCulture!.CulturePercent)
     }
