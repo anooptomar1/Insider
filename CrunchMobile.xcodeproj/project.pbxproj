@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49EC41FDA43143C1C92135F6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B514B46DB5FBB5BA1EC62B9 /* libPods.a */; };
+		8924FBB61AC21F3700922AFA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8924FBB51AC21F3700922AFA /* LoginViewController.swift */; };
 		893638CF1AB2316900F7DF0B /* CrunchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893638CE1AB2316900F7DF0B /* CrunchClient.swift */; };
 		893638D11AB232D900F7DF0B /* SharedVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893638D01AB232D900F7DF0B /* SharedVariables.swift */; };
 		89480D7D1ABE9308009F6882 /* CompanyCulture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89480D7C1ABE9308009F6882 /* CompanyCulture.swift */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		2B514B46DB5FBB5BA1EC62B9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		796FDE22919D45E1588D29D1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8924FBB51AC21F3700922AFA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		893638CE1AB2316900F7DF0B /* CrunchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrunchClient.swift; sourceTree = "<group>"; };
 		893638D01AB232D900F7DF0B /* SharedVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedVariables.swift; sourceTree = "<group>"; };
 		89480D7C1ABE9308009F6882 /* CompanyCulture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyCulture.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		89E0683B1AAFCE52008F79BE /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				DFA61DB81AAEC15300EC202F /* Supporting Files */,
 				DFA61DC31AAEC15300EC202F /* LaunchScreen.xib */,
 				DFA61DC11AAEC15300EC202F /* Images.xcassets */,
 				DFA61DBA1AAEC15300EC202F /* AppDelegate.swift */,
@@ -191,6 +194,7 @@
 				8971360D1ABB94E700EFB1A0 /* MainTableViewCell.swift */,
 				8971360F1ABC7AE500EFB1A0 /* DetailsViewController.swift */,
 				897CA0141AC135FF0078CF49 /* ValueStockViewController.swift */,
+				8924FBB51AC21F3700922AFA /* LoginViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -233,7 +237,6 @@
 				DF4FE0701AAED81600B730D1 /* Model */,
 				DFA61DDF1AAEC37200EC202F /* View */,
 				DFA61DDA1AAEC1A000EC202F /* ViewController */,
-				DFA61DB81AAEC15300EC202F /* Supporting Files */,
 			);
 			path = CrunchMobile;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				DFA61DB91AAEC15300EC202F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = CrunchMobile;
 			sourceTree = "<group>";
 		};
 		DFA61DCD1AAEC15300EC202F /* CrunchMobileTests */ = {
@@ -440,6 +444,7 @@
 				DFA61DE21AAEC3A000EC202F /* CompanyTableViewCell.swift in Sources */,
 				DFA61DBB1AAEC15300EC202F /* AppDelegate.swift in Sources */,
 				DFA61DE81AAECCCB00EC202F /* CompanyTableViewController.swift in Sources */,
+				8924FBB61AC21F3700922AFA /* LoginViewController.swift in Sources */,
 				DF4FE0791AB633A200B730D1 /* CompanyGossipViewController.swift in Sources */,
 				89E068431AAFCF12008F79BE /* MainViewController.swift in Sources */,
 				89480D831ABE9345009F6882 /* CompanyStock.swift in Sources */,

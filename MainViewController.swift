@@ -23,7 +23,9 @@ class MainViewController: UIViewController{
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-
+        
+        println(FBSession.activeSession().permissions)
+        
         reloadDataFromNetwork(pageNumber, cnt: count)
         //self.tableView.rowHeight = UITableViewAutomaticDimension;
         //self.tableView.backgroundColor = UIColor.whiteColor()
@@ -68,15 +70,19 @@ class MainViewController: UIViewController{
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.tableView.rowHeight = UITableViewAutomaticDimension;
-        if(self.tableViewOffset.y != self.tableView.contentOffset.y){
-            UIView.animateWithDuration(0.5, animations: {
-                self.tableView.contentOffset = self.tableViewOffset
-            }, completion: { (finished) -> Void in
-                self.tableViewOffset = CGPointZero
-            })
-        }
+//        if(self.tableViewOffset.y != self.tableView.contentOffset.y){
+//            UIView.animateWithDuration(0.5, animations: {
+//                self.tableView.contentOffset = self.tableViewOffset
+//            }, completion: { (finished) -> Void in
+//                self.tableViewOffset = CGPointZero
+//            })
+//        }
     }
 
+    @IBAction func onMenuButton(sender: UIBarButtonItem) {
+        let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("loginVC") as LoginViewController
+        presentViewController(loginVC, animated: true, completion: nil)
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         self.tableViewOffset = self.tableView.contentOffset
@@ -111,3 +117,4 @@ extension MainViewController: UITableViewDataSource{
 extension MainViewController: UITableViewDelegate{
 
 }
+
